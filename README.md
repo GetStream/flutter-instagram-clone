@@ -16,13 +16,6 @@ Stream-agram is a demo application showing how to recreate Instagram using <a hr
 <img src="/previews/preview.png" />
 </p>
 
-## Previews
-<p align="center">
-<img src="https://media.giphy.com/media/MIrqjKRR9BjhpaHlOj/giphy.gif" width="32%" height="50%"/>
-<img src="https://media.giphy.com/media/JmRYelSIZzI0mieFwO/giphy.gif" width="32%" height="50%"/>
-<img src="https://media.giphy.com/media/GdZBm6SBJgiGRG8nBv/giphy.gif" width="32%" height="50%"/>
-</p>
-
 ## Tutorials
 If you'd like to learn more about this project and how the code is structured, take a look at the companion blog and video.
 
@@ -33,6 +26,13 @@ TODO: mention the fixed branch for code and video.
 
 ### YouTube Video
 - TODO: add link
+
+## Previews
+<p align="center">
+<img src="https://media.giphy.com/media/MIrqjKRR9BjhpaHlOj/giphy.gif" width="32%" height="50%"/>
+<img src="https://media.giphy.com/media/JmRYelSIZzI0mieFwO/giphy.gif" width="32%" height="50%"/>
+<img src="https://media.giphy.com/media/GdZBm6SBJgiGRG8nBv/giphy.gif" width="32%" height="50%"/>
+</p>
 
 ## Getting Started
 These are the steps to run this project locally, for your own Stream Feeds Project.
@@ -60,16 +60,16 @@ You will also need to add your **Stream API-Key** and **User Frontend Tokens**. 
 ## Stream Feeds Flutter SDK
 Stream-agram is built with [Stream Feeds](https://getstream.io/activity-feeds/) for implementing activity feeds.
 - [Activity Feeds Tutorial](https://getstream.io/activity-feeds/sdk/flutter/tutorial/) - Basic tutorials for getting started with activity feeds.
-- [Stream Feeds Flutter repository](https://github.com/GetStream/stream-feed-flutter) - Official Flutter SDK for Stream Feeds.
-- [Feed Client Documentation](https://getstream.io/activity-feeds/docs/flutter-dart/?language=dart) - Full documentation of the Feeds client for detailed information on Activity Feeds.
+- [Stream Feeds Flutter Repository](https://github.com/GetStream/stream-feed-flutter) - Official Flutter SDK for Stream Feeds.
+- [Feed Client Documentation](https://getstream.io/activity-feeds/docs/flutter-dart/?language=dart) - Detailed documentation of the Activity Feeds client.
 
 ## Stream Chat Flutter SDK
 If you're interested in adding chat functionality to your Instagram clone, check out [Stream Chat](https://getstream.io/chat/).
 - [Chat Messaging Tutorial](https://getstream.io/chat/flutter/tutorial/) - Basic tutorials for getting started by building a simple messaging app.
 - [Stream Chat Flutter repository](https://github.com/GetStream/stream-chat-flutter) - Official Flutter SDK for Stream Chat.
 - [Chat Client Documentation](https://getstream.io/chat/docs/flutter-dart/?language=dart) - Full documentation of the Chat client for requesting API calls. 
-- [UI Components Documentation](https://getstream.io/chat/docs/sdk/flutter/) - Full documentation of the Stream UI Components.
-- [Sample Applications](https://github.com/GetStream/flutter-samples) - Official sample demos for building messaging apps.
+- [Chat UI Components Documentation and Guides](https://getstream.io/chat/docs/sdk/flutter/) - Full documentation of the Stream UI Components.
+- [Sample Application](https://github.com/GetStream/flutter-samples/tree/main/packages/stream_chat_v1) - Official Flutter sample chat application.
 
 <img src="https://media.giphy.com/media/1f8chcHHx3DKt79RmY/giphy.gif" align="right" width="32%"/>
 

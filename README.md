@@ -34,6 +34,18 @@ TODO: mention the fixed branch for code and video.
 <img src="https://media.giphy.com/media/GdZBm6SBJgiGRG8nBv/giphy.gif" width="32%" height="50%"/>
 </p>
 
+<img src="https://media.giphy.com/media/1f8chcHHx3DKt79RmY/giphy.gif" align="right" width="32%"/>
+
+## Supported features
+- Light and Dark themes.
+- Instagram-like animations and transitions.
+- Sign in using different user accounts
+- Add and change profile pictures
+- Add photo posts to your own user feed (activities)
+- Subscribe/unsubscribe to other users’ feeds
+- Add comments and likes (reactions)
+
+
 ## Getting Started
 These are the steps to run this project locally, for your own Stream Feeds Project.
 
@@ -63,6 +75,8 @@ Stream-agram is built with [Stream Feeds](https://getstream.io/activity-feeds/) 
 - [Stream Feeds Flutter Repository](https://github.com/GetStream/stream-feed-flutter) - Official Flutter SDK for Stream Feeds.
 - [Feed Client Documentation](https://getstream.io/activity-feeds/docs/flutter-dart/?language=dart) - Detailed documentation of the Activity Feeds client.
 
+<img src="https://media.giphy.com/media/Dm0KdEtqxhpdkEa6j7/giphy.gif" align="right" width="32%"/>
+
 ## Stream Chat Flutter SDK
 If you're interested in adding chat functionality to your Instagram clone, check out [Stream Chat](https://getstream.io/chat/).
 - [Chat Messaging Tutorial](https://getstream.io/chat/flutter/tutorial/) - Basic tutorials for getting started by building a simple messaging app.
@@ -70,17 +84,6 @@ If you're interested in adding chat functionality to your Instagram clone, check
 - [Chat Client Documentation](https://getstream.io/chat/docs/flutter-dart/?language=dart) - Full documentation of the Chat client for requesting API calls. 
 - [Chat UI Components Documentation and Guides](https://getstream.io/chat/docs/sdk/flutter/) - Full documentation of the Stream UI Components.
 - [Sample Application](https://github.com/GetStream/flutter-samples/tree/main/packages/stream_chat_v1) - Official Flutter sample chat application.
-
-<img src="https://media.giphy.com/media/1f8chcHHx3DKt79RmY/giphy.gif" align="right" width="32%"/>
-
-## Supported features
-- Light and Dark themes.
-- Instagram-like animations and transitions.
-- Sign in using different user accounts
-- Add and change profile pictures
-- Add photo posts to your own user feed (activities)
-- Subscribe/unsubscribe to other users’ feeds
-- Add comments and likes (reactions)
 
 ## Find this repository useful? 💙
 Support it by joining __[stargazers](https://github.com/GetStream/flutter-instagram-clone/stargazers)__ :star: <br>

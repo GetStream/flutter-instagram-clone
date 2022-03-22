@@ -19,8 +19,6 @@ Stream-agram is a demo application showing how to recreate Instagram using <a hr
 ## Tutorials
 If you'd like to learn more about this project and how the code is structured, take a look at the companion blog and video.
 
-TODO: mention the fixed branch for code and video.
-
 ### Blog Post
 - [Article](https://getstream.io/blog/instagram-clone-flutter/) detailing a step-by-step guide for this project.
 
@@ -62,7 +60,7 @@ flutter create .
 Depending on the platform that you're targetting you will need to do some [setup](https://pub.dev/packages/image_picker#installation) for the [image_picker](https://pub.dev/packages/image_picker) Flutter package. At the time of writing this package only supports **Android**, **iOS** and **Web**.
 
 ### Add Keys and Tokens
-You will also need to add your **Stream API-Key** and **User Frontend Tokens**. These are marked with TODOs in the codebase. For additional information, see the [blog](https://getstream.io/blog/instagram-clone-flutter/#creating-demo-instagram-users) or TODO(add video).
+You will also need to add your **Stream API-Key** and **User Frontend Tokens**. These are marked with TODOs in the codebase. For additional information, see the [blog](https://getstream.io/blog/instagram-clone-flutter/#creating-demo-instagram-users) or [video](https://www.youtube.com/watch?v=fHRB6KGoaV0&t=627s) section on creating user tokens.
 
 
 <img src="https://user-images.githubusercontent.com/24237865/138428440-b92e5fb7-89f8-41aa-96b1-71a5486c5849.png" align="right" width="12%"/>

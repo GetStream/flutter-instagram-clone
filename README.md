@@ -34,8 +34,6 @@ TODO: mention the fixed branch for code and video.
 <img src="https://media.giphy.com/media/GdZBm6SBJgiGRG8nBv/giphy.gif" width="32%" height="50%"/>
 </p>
 
-<img src="https://media.giphy.com/media/1f8chcHHx3DKt79RmY/giphy.gif" align="right" width="32%"/>
-
 ## Supported features
 - Light and Dark themes.
 - Instagram-like animations and transitions.

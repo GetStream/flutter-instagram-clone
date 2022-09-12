@@ -50,6 +50,7 @@ class _TimelinePageState extends State<TimelinePage> {
         data: {'message': message},
       );
       _commentTextController.clear();
+      if (!mounted) return;
       FocusScope.of(context).unfocus();
       _showCommentBox.value = false;
     }

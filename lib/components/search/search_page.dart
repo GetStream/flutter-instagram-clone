@@ -111,6 +111,7 @@ class __ProfileTileState extends State<_ProfileTile> {
     setState(() {
       _isLoading = true;
     });
+    final bloc = FeedProvider.of(context).bloc;
     if (_isFollowing) {
       final bloc = FeedProvider.of(context).bloc;
       await bloc.unfollowFeed(unfolloweeId: widget.user.id);
@@ -121,13 +122,13 @@ class __ProfileTileState extends State<_ProfileTile> {
           .followFeed(followeeId: widget.user.id);
       _isFollowing = true;
     }
-    FeedProvider.of(context).bloc.refreshPaginatedEnrichedActivities(
-          feedGroup: 'timeline',
-          flags: EnrichmentFlags()
-            ..withOwnReactions()
-            ..withRecentReactions()
-            ..withReactionCounts(),
-        );
+    bloc.refreshPaginatedEnrichedActivities(
+      feedGroup: 'timeline',
+      flags: EnrichmentFlags()
+        ..withOwnReactions()
+        ..withRecentReactions()
+        ..withReactionCounts(),
+    );
 
     setState(() {
       _isLoading = false;

@@ -144,6 +144,7 @@ class __ChangeProfilePictureButtonState
     if (pickedFile != null) {
       await context.appState.updateProfilePhoto(pickedFile.path);
     } else {
+      if (!mounted) return;
       context.removeAndShowSnackbar('No picture selected');
     }
   }

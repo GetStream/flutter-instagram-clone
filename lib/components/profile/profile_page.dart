@@ -68,6 +68,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 .currentUser!
                 .get(withFollowCounts: true);
             // Refresh activities
+            if (!mounted) return;
             return FeedProvider.of(context)
                 .bloc
                 .refreshPaginatedEnrichedActivities(feedGroup: _feedGroup);

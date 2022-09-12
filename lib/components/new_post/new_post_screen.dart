@@ -17,7 +17,7 @@ class NewPostScreen extends StatefulWidget {
       MaterialPageRoute(builder: (_) => const NewPostScreen());
 
   @override
-  _NewPostScreenState createState() => _NewPostScreenState();
+  State<NewPostScreen> createState() => _NewPostScreenState();
 }
 
 class _NewPostScreenState extends State<NewPostScreen> {
@@ -55,6 +55,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
     _setLoading(true);
 
     final client = context.appState.client;
+    final bloc = FeedProvider.of(context).bloc;
 
     var decodedImage =
         await decodeImageFromList(await _pickedFile!.readAsBytes());
@@ -63,20 +64,20 @@ class _NewPostScreenState extends State<NewPostScreen> {
         await client.images.upload(AttachmentFile(path: _pickedFile!.path));
 
     if (imageUrl != null) {
-      final _resizedUrl = await client.images.getResized(
+      final resizedUrl = await client.images.getResized(
         imageUrl,
         const Resize(300, 300),
       );
 
-      if (_resizedUrl != null && client.currentUser != null) {
-        await FeedProvider.of(context).bloc.onAddActivity(
+      if (resizedUrl != null && client.currentUser != null) {
+        await bloc.onAddActivity(
           feedGroup: 'user',
           verb: 'post',
           object: 'image',
           data: {
             'description': _text.text,
             'image_url': imageUrl,
-            'resized_image_url': _resizedUrl,
+            'resized_image_url': resizedUrl,
             'image_width': decodedImage.width,
             'image_height': decodedImage.height,
             'aspect_ratio': decodedImage.width / decodedImage.height
@@ -86,6 +87,7 @@ class _NewPostScreenState extends State<NewPostScreen> {
     }
 
     _setLoading(false, shouldCallSetState: false);
+    if (!mounted) return;
     context.removeAndShowSnackbar('Post created!');
 
     Navigator.of(context).pop();

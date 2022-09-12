@@ -25,7 +25,7 @@ class FavoriteIconButton extends StatefulWidget {
   final Function(bool val) onTap;
 
   @override
-  _FavoriteIconButtonState createState() => _FavoriteIconButtonState();
+  State<FavoriteIconButton> createState() => _FavoriteIconButtonState();
 }
 
 class _FavoriteIconButtonState extends State<FavoriteIconButton> {

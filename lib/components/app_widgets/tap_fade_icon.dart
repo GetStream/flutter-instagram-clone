@@ -26,7 +26,7 @@ class TapFadeIcon extends StatefulWidget {
   final double size;
 
   @override
-  _TapFadeIconState createState() => _TapFadeIconState();
+  State<TapFadeIcon> createState() => _TapFadeIconState();
 }
 
 class _TapFadeIconState extends State<TapFadeIcon> {

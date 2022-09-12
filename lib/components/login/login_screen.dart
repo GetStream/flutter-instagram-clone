@@ -11,7 +11,7 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -52,6 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         final success = await context.appState.connect(user);
 
                         if (success) {
+                          if (!mounted) return;
                           context.removeAndShowSnackbar('User connected');
 
                           await Navigator.of(context).pushReplacement(
@@ -60,6 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           );
                         } else {
+                          if (!mounted) return;
                           context
                               .removeAndShowSnackbar('Could not connect user');
                         }

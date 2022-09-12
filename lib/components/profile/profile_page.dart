@@ -11,14 +11,36 @@ import '../new_post/new_post.dart';
 /// {@template profile_page}
 /// User profile page. List of user created posts.
 /// {@endtemplate}
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   /// {@macro profile_page}
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  bool _isPaginating = false;
+
+  static const _feedGroup = 'user';
+
+  Future<void> _loadMore() async {
+    // Ensure we're not already loading more activities.
+    if (!_isPaginating) {
+      _isPaginating = true;
+      context.feedBloc
+          .loadMoreEnrichedActivities(feedGroup: _feedGroup)
+          .whenComplete(() {
+        _isPaginating = false;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FlatFeedCore(
-      feedGroup: 'user',
+      feedGroup: _feedGroup,
+      limit: 12,
       loadingBuilder: (context) =>
           const Center(child: CircularProgressIndicator()),
       errorBuilder: (context, error) => const Center(
@@ -40,13 +62,15 @@ class ProfilePage extends StatelessWidget {
       feedBuilder: (context, activities) {
         return RefreshIndicator(
           onRefresh: () async {
+            // Refresh follow counts
             await FeedProvider.of(context)
                 .bloc
                 .currentUser!
                 .get(withFollowCounts: true);
+            // Refresh activities
             return FeedProvider.of(context)
                 .bloc
-                .refreshPaginatedEnrichedActivities(feedGroup: 'user');
+                .refreshPaginatedEnrichedActivities(feedGroup: _feedGroup);
           },
           child: CustomScrollView(
             slivers: [
@@ -69,6 +93,11 @@ class ProfilePage extends StatelessWidget {
                 ),
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
+                    // Pagination (Infinite scroll)
+                    bool shouldLoadMore = activities.length - 3 == index;
+                    if (shouldLoadMore) {
+                      _loadMore();
+                    }
                     final activity = activities[index];
                     final url =
                         activity.extraData!['resized_image_url'] as String;

@@ -21,6 +21,13 @@ class _TimelinePageState extends State<TimelinePage> {
   final TextEditingController _commentTextController = TextEditingController();
   final FocusNode _commentFocusNode = FocusNode();
   EnrichedActivity? activeActivity;
+  bool _isPaginating = false;
+
+  static const _feedGroup = 'timeline';
+  static final _flags = EnrichmentFlags()
+    ..withOwnReactions()
+    ..withRecentReactions()
+    ..withReactionCounts();
 
   void openCommentBox(EnrichedActivity activity, {String? message}) {
     _commentTextController.text = message ?? '';
@@ -48,6 +55,18 @@ class _TimelinePageState extends State<TimelinePage> {
     }
   }
 
+  Future<void> _loadMore() async {
+    // Ensure we're not already loading more activities.
+    if (!_isPaginating) {
+      _isPaginating = true;
+      context.feedBloc
+          .loadMoreEnrichedActivities(feedGroup: _feedGroup, flags: _flags)
+          .whenComplete(() {
+        _isPaginating = false;
+      });
+    }
+  }
+
   @override
   void dispose() {
     _commentTextController.dispose();
@@ -65,17 +84,14 @@ class _TimelinePageState extends State<TimelinePage> {
       child: Stack(
         children: [
           FlatFeedCore(
-            feedGroup: 'timeline',
+            feedGroup: _feedGroup,
             errorBuilder: (context, error) =>
                 const Text('Could not load profile'),
             loadingBuilder: (context) => const SizedBox(),
             emptyBuilder: (context) => const Center(
               child: Text('No Posts\nGo and post something'),
             ),
-            flags: EnrichmentFlags()
-              ..withOwnReactions()
-              ..withRecentReactions()
-              ..withReactionCounts(),
+            flags: _flags,
             feedBuilder: (context, activities) {
               return RefreshIndicator(
                 onRefresh: () {
@@ -92,6 +108,12 @@ class _TimelinePageState extends State<TimelinePage> {
                 child: ListView.builder(
                   itemCount: activities.length,
                   itemBuilder: (context, index) {
+                    // Pagination (Infinite scroll)
+                    bool shouldLoadMore = activities.length - 3 == index;
+                    if (shouldLoadMore) {
+                      _loadMore();
+                    }
+
                     return PostCard(
                       key: ValueKey('post-${activities[index].id}'),
                       enrichedActivity: activities[index],

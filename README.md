@@ -17,7 +17,11 @@ Stream-agram is a demo application showing how to recreate Instagram using <a hr
 </p>
 
 ## Tutorials
-If you'd like to learn more about this project and how the code is structured, take a look at the companion blog and video.
+If you'd like to learn more about this project and how the code is structured, take a look at the companion blog and video. Make sure you're on the [tutorial branch](https://github.com/GetStream/flutter-instagram-clone/tree/tutorial) - this branch is the historic branch that aligns with the tutorial. The `main` branch is the most up to date with the latest code changes and package versions.
+
+```bash
+git checkout tutorial
+```
 
 ### Blog Post
 - [Article](https://getstream.io/blog/instagram-clone-flutter/) detailing a step-by-step guide for this project.

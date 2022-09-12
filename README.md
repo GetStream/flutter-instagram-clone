@@ -54,6 +54,11 @@ These are the steps to run this project locally, with your own Stream Feeds conf
 git clone https://github.com/GetStream/flutter-instagram-clone
 ```
 
+The project folder needs to be renamed in order for `flutter create` to work (dashes "-" in the folder name are not allowed). You can do this however you want. For example, from a bash terminal you can do:
+```bash
+mv flutter-instagram-clone flutter_instagram_clone
+```
+
 ### Create Flutter Platform Folders
 Run this inside the main folder to generate platform folders.
 ```

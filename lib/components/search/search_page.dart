@@ -16,7 +16,7 @@ class SearchPage extends StatelessWidget {
     return ListView.builder(
       itemCount: users.length,
       itemBuilder: (context, index) {
-        return _UserProfile(userId: users[index].id!);
+        return _UserProfile(userId: users[index].id);
       },
     );
   }
@@ -121,7 +121,7 @@ class __ProfileTileState extends State<_ProfileTile> {
           .followFeed(followeeId: widget.user.id);
       _isFollowing = true;
     }
-    FeedProvider.of(context).bloc.queryEnrichedActivities(
+    FeedProvider.of(context).bloc.refreshPaginatedEnrichedActivities(
           feedGroup: 'timeline',
           flags: EnrichmentFlags()
             ..withOwnReactions()

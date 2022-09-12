@@ -79,7 +79,9 @@ class _TimelinePageState extends State<TimelinePage> {
             feedBuilder: (context, activities) {
               return RefreshIndicator(
                 onRefresh: () {
-                  return FeedProvider.of(context).bloc.queryEnrichedActivities(
+                  return FeedProvider.of(context)
+                      .bloc
+                      .refreshPaginatedEnrichedActivities(
                         feedGroup: 'timeline',
                         flags: EnrichmentFlags()
                           ..withOwnReactions()

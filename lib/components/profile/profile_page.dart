@@ -46,7 +46,7 @@ class ProfilePage extends StatelessWidget {
                 .get(withFollowCounts: true);
             return FeedProvider.of(context)
                 .bloc
-                .queryEnrichedActivities(feedGroup: 'user');
+                .refreshPaginatedEnrichedActivities(feedGroup: 'user');
           },
           child: CustomScrollView(
             slivers: [

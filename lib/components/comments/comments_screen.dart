@@ -175,7 +175,7 @@ class __CommentBoxState extends State<_CommentBox> {
           await FeedProvider.of(context).bloc.onAddChildReaction(
             kind: 'comment',
             reaction: commentFocus.reaction!,
-            activity: widget.enrichedActivity,
+            lookupValue: widget.enrichedActivity.id!,
             data: {'message': value},
           );
         }

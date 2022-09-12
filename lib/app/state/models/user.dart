@@ -18,9 +18,9 @@ class StreamagramUser {
   /// Converts a Map to this.
   factory StreamagramUser.fromMap(Map<String, dynamic> map) {
     return StreamagramUser(
-      firstName: map['first_name'] as String,
-      lastName: map['last_name'] as String,
-      fullName: map['full_name'] as String,
+      firstName: map['first_name'] as String? ?? 'No name',
+      lastName: map['last_name'] as String? ?? 'No last name',
+      fullName: map['full_name'] as String? ?? 'No full name',
       profilePhoto: map['profile_photo'] as String?,
       profilePhotoResized: map['profile_photo_resized'] as String?,
       profilePhotoThumbnail: map['profile_photo_thumbnail'] as String?,

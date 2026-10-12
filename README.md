@@ -1,3 +1,5 @@
+> **This repository is archived and no longer maintained.** For a current alternative, see [stream-feeds-flutter-tutorial](https://github.com/GetStream/stream-feeds-flutter-tutorial).
+
 <h1 align="center">Flutter Instagram Clone (Stream-agram)</h1>
 
 <p align="center">
